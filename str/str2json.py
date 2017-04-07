@@ -13,7 +13,7 @@ class Solution(object):
         count_left = 0
         for i in jstr:
             other = ''
-            if i == '{':
+            if i == '{' or i == '[':
                 count_left += 1
                 other = next_line + next_tab * count_left
                 ret_json += i + other
@@ -23,15 +23,7 @@ class Solution(object):
             elif i == ':':
                 other = next_blank
                 ret_json += i + other
-            elif i == '[':
-                count_left += 1
-                other = next_line + next_tab * count_left
-                ret_json += i + other
-            elif i == ']':
-                count_left -= 1
-                other = next_line + next_tab * count_left
-                ret_json += other + i
-            elif i == '}':
+            elif i == ']' or i == '}':
                 count_left -= 1
                 other = next_line + next_tab * count_left
                 ret_json += other + i
