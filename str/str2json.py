@@ -34,9 +34,7 @@ class Solution(object):
 
 
 if __name__ == '__main__':
-    str_json = '{"employees":[{"firstName":"Bill","lastName":{"Gates":"Any"}},\
-        {"firstName":"George","lastName":"Bush"},\
-        {"firstName":"Thomas","lastName":"Carter"}]}'
+    str_json = '{"employees":[{"firstName":"Bill","lastName":{"Gates":"Any"}},{"firstName":"George","lastName":"Bush"},{"firstName":"Thomas","lastName":"Carter"}]}'
     print json.dumps(eval(str_json), indent=8)
     s_obj = Solution()
     print s_obj.json_dump(str_json)
